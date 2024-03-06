@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="report.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="page">
+        <div class="report">
+          <div class="block">
+            <div class="content">
+              <div class="menu">
+                <div class="select_feat">Summary</div>
+                <div class="unselect_feat">Detail</div>
+                <div class="unselect_feat">Ranking</div>
+              </div>
+              <div>
+                <div class="activity_header">
+                  <div class="activity_summary">Activity Summary</div>
+                  <div class="seperate_line"></div>
+                </div>
+                <div>
+                  <div class="activity_summary_content">
+                    <div class="activity_block">
+                      <img src="/icons/clock-red.png" alt="panel icon" class="icon">
+                      <div class="hours">12</div>
+                      <div class="times_des">hours focused</div>
+                    </div>
+                    <div class="activity_block">
+                      <img src="/icons/calender-red.png" alt="panel icon" class="icon">
+                      <div class="hours">12</div>
+                      <div class="times_des">days accessed</div>
+                    </div>
+                    <div class="activity_block">
+                      <img src="/icons/flame-red.png" alt="panel icon" class="icon">
+                      <div class="hours">12</div>
+                      <div class="times_des">day streak</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="activity_header">
+                  <div class="activity_summary">Focus Hours</div>
+                  <div class="seperate_line"></div>
+                </div>
+                <div class="focus_hours_header">
+                  <div class="time_option">
+                    <div class="unselect_time">Week</div>
+                    <div class="select_time">Month</div>
+                    <div class="unselect_time">Year </div>
+                  </div>
+                  <div class="time_block">
+                    <div class="leftarrow"> &lt; </div>
+                    <div class="time_choose">This Week</div>
+                    <div class="rightarrow"> &gt; </div>
+                  </div>
+                </div>
+                <div class="sc-jQMNup KzhTO">
+                  <div class="chartjs-size-monitor">
+                    <div class="chartjs-size-monitor-expand">
+                      <div class=""></div>
+                    </div>
+                    <div class="chartjs-size-monitor-shrink">
+                      <div class=""></div>
+                    </div>
+                  </div>
+                  <canvas id="myChart" width="400" height="400"></canvas>
+                  <script>
+                  const canvas = document.getElementById('myChart');
+                  const ctx = canvas.getContext('2d');
+                  // Chart data
+                  const data = {
+                  labels: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
+                  datasets: [{
+                  label: 'hours',
+                  data: [6, 7, 8, 5, 9, 6, 4],
+                  backgroundColor: 'rgba(255, 102, 102, 1)'
+                  }]
+                  };
+                  // Chart configuration
+                  const options = {
+                  responsive: true,
+                  scales: {
+                  y: {
+                  beginAtZero: true,
+                  title: {
+                  display: true,
+                  text: 'hours'
+                  }
+                  }
+                  }
+                  };
+                  // Create the chart
+                  new Chart(ctx, {
+                  type: 'bar',
+                  data: data,
+                  options: options
+                  });
+                </script>
+                </div>
+                <div class="end_block">
+                  <div class="activity_header">
+                    <button class="edit_button">
+                      <img src="/icons/config-black.png" class="edit_text">Edit </button>
+                  </div>
+                  <div class="project_summary">
+                    <div>PROJECT</div>
+                    <div>TIME(HH:MM)</div>
+                  </div>
+                  <div class="total_header">
+                    <div class="total_block">
+                      <div class="total">Total</div>
+                    </div>
+                    <div class="total_time">12:12</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+</body>
+</html>
